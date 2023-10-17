@@ -1,3 +1,10 @@
+import caribe from '../../assets/region/caribe.webp'
+import pacifico from '../../assets/region/pacifica.webp'
+import orinoco from '../../assets/region/orinoquia.webp'
+import amazonas from '../../assets/region/amazonas.webp'
+import andina from '../../assets/region/andina.webp'
+import insular from '../../assets/region/insular.webp'
+
 export const getInfo = async () => {
   const URL = `https://api-colombia.com/api/v1/Country/Colombia`
   const resp = await fetch(URL)
@@ -13,13 +20,14 @@ export const getInfo = async () => {
   return infos
 }
 
+// infoRegion
 const regionImageMapping = {
-  Caribe: '../../assets/region/caribe.webp',
-  Pacífico: '../../assets/region/pacifica.webp',
-  Orinoquía: '../../assets/region/orinoquia.webp',
-  Amazonía: '../../assets/region/amazonas.webp',
-  Andina: '../../assets/region/andina.webp',
-  Insular: '../../assets/region/insular.webp',
+  Caribe: caribe,
+  Pacífico: pacifico,
+  Orinoquía: orinoco,
+  Amazonía: amazonas,
+  Andina: andina,
+  Insular: insular,
 }
 
 export const getInfoRegion = async () => {
@@ -37,3 +45,13 @@ export const getInfoRegion = async () => {
 
   return regionData
 }
+
+export const getInfoDepartments = async () => {
+  const URL = `https://api-colombia.com/api/v1/Department`
+  const resp = await fetch(URL)
+  const data = await resp.json()
+
+  console.log(data)
+}
+
+getInfoDepartments()

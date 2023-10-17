@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getInfoRegion } from '../helpers/getInfo'
+import { NavLink } from 'react-router-dom'
 
-export const SectionTwo = () => {
+export const SectionRegions = () => {
   const [infoRegion, setInfoRegion] = useState([])
 
   const getNewRegion = async () => {
@@ -23,13 +24,12 @@ export const SectionTwo = () => {
       </section>
 
       <section className='mt-10 md:flex md:justify-center'>
-        <div className='grid lg:grid-cols-3 gap-4 lg:gap-2 sm:grid-cols-2'>
+        <div className='grid lg:grid-cols-3 gap-4 lg:gap-2 sm:grid-cols-2 place-items-center'>
           {infoRegion.map((region) => (
             <div
               key={region.id}
-              className='w-96 py-2 px-8 bg-white shadow-lg rounded-lg my-6 '
+              className='w-96 py-2 px-8 bg-white shadow-lg rounded-lg my-6 md:w-80 sm:w-64'
             >
-              {console.log(region.image)}
               <div className='flex justify-center md:justify-end -mt-16'>
                 <img
                   className='w-32 h-32 object-cover rounded-full border-2 border-indigo-500'
@@ -39,14 +39,19 @@ export const SectionTwo = () => {
               </div>
               <div>
                 <h2 className='text-gray-800 text-3xl font-semibold'>
-                  {region.name}
+                  Región {region.name}
                 </h2>
-                <p className='mt-2 text-gray-600'>{region.description}</p>
+                <p className='mt-2 text-gray-600'>
+                  {region.description.slice(0, 80)}...
+                </p>
               </div>
               <div className='flex justify-end items-center mt-4'>
-                <a href='#' className='text-xl font-medium text-indigo-500'>
+                <NavLink
+                  to='/region'
+                  className='text-xl font-medium text-indigo-500'
+                >
                   Saber Más
-                </a>
+                </NavLink>
               </div>
             </div>
           ))}

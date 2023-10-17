@@ -18,9 +18,11 @@ export const SectionOne = () => {
 
   return (
     <article className='img-fund w-full h-screen flex flex-col justify-center items-center text-white'>
-      <section>
+      <section className=''>
         <div>
-          <h1 className='text-9xl font-bold '>Colombia</h1>
+          <h1 className='text-7xl sm:text-9xl md:text-9xl lg:text-9xl xl:text-9xl'>
+            Colombia
+          </h1>
           <p className='text-center text-xl font-semibold'>
             Todo sobre Colombia
           </p>

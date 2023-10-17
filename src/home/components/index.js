@@ -1,2 +1,3 @@
 export * from './SectionOne'
-export * from './SectionTwo'
+export * from './SectionRegions'
+export * from './SectionDepartments'
