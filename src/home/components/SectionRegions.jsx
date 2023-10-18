@@ -15,9 +15,11 @@ export const SectionRegions = () => {
   }, [])
 
   return (
-    <article>
+    <article className='p-2'>
       <section className='text-center m-3 text-white'>
-        <h2 className='text-7xl'>Regiones</h2>
+        <h2 className='text-5xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-7xl'>
+          Regiones
+        </h2>
         <p className='m-3'>
           El territorio colombiano se divide en seis regiones
         </p>
@@ -28,7 +30,7 @@ export const SectionRegions = () => {
           {infoRegion.map((region) => (
             <div
               key={region.id}
-              className='w-96 py-2 px-8 bg-white shadow-lg rounded-lg my-6 md:w-80 sm:w-64'
+              className='py-2 px-8 bg-white shadow-lg rounded-lg my-6 md:w-80 sm:w-64'
             >
               <div className='flex justify-center md:justify-end -mt-16'>
                 <img
@@ -48,9 +50,9 @@ export const SectionRegions = () => {
               <div className='flex justify-end items-center mt-4'>
                 <NavLink
                   to='/region'
-                  className='text-xl font-medium text-indigo-500'
+                  className='text-xl font-medium text-black hover:text-indigo-500'
                 >
-                  Saber Más
+                  Saber Más...
                 </NavLink>
               </div>
             </div>

@@ -46,12 +46,40 @@ export const getInfoRegion = async () => {
   return regionData
 }
 
+//info Departments
 export const getInfoDepartments = async () => {
   const URL = `https://api-colombia.com/api/v1/Department`
   const resp = await fetch(URL)
   const data = await resp.json()
 
-  console.log(data)
+  const department = data.map((depar) => ({
+    id: depar.id,
+    name: depar.name,
+  }))
+
+  return department
 }
 
-getInfoDepartments()
+//indo president
+export const getPresident = async () => {
+  const URL = `https://api-colombia.com/api/v1/President`
+  const resp = await fetch(URL)
+  const data = await resp.json()
+
+  const president = data.map((pres) => ({
+    id: pres.id,
+    image: pres.image,
+    name: pres.name,
+    lastName: pres.lastName,
+    startPeriodDate: pres.startPeriodDate,
+    endPeriodDate: pres.endPeriodDate,
+    politicalParty: pres.politicalParty,
+    description: pres.description,
+  }))
+
+  console.log(president)
+
+  return president
+}
+
+getPresident()

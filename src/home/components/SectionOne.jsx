@@ -33,7 +33,7 @@ export const SectionOne = () => {
           <label className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'>
             Search
           </label>
-          <div className='relative w-96'>
+          <div className='relative w-72 sm:w-96'>
             <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
               <MagnifyingGlassCircleIcon className='w-4 h-4 text-gray-500 dark:text-gray-400' />
             </div>
@@ -56,16 +56,16 @@ export const SectionOne = () => {
       </section>
 
       {/* acá se hace la petición y se añade los tres datos */}
-      <section className='flex mt-9'>
-        <div className='mr-5 p-3  bg-black opacity-70 text-white text-center font-medium rounded-md'>
+      <section className='flex mt-9 gap-1 sm:gap-5'>
+        <div className=' p-3  bg-black opacity-70 text-white text-center font-medium rounded-md'>
           Superficie
           <p>{infos.surface} km²</p>
         </div>
-        <div className='mr-5 p-3 bg-black opacity-70 text-center text-white font-medium rounded-md'>
+        <div className=' p-3 bg-black opacity-70 text-center text-white font-medium rounded-md'>
           Estado Capital
           <p>{infos.stateCapital}</p>
         </div>
-        <div className='mr-5 p-3 bg-black opacity-70 text-center text-white font-medium rounded-md'>
+        <div className=' p-3 bg-black opacity-70 text-center text-white font-medium rounded-md'>
           Población
           <p>{infos.population}</p>
         </div>
