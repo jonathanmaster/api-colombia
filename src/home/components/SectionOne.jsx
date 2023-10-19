@@ -1,7 +1,7 @@
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/20/solid'
 
 import '../../index.css'
-import { getInfo } from '../helpers/getInfo'
+import { getInfo } from '../../helpers/getInfo'
 import { useEffect, useState } from 'react'
 
 export const SectionOne = () => {

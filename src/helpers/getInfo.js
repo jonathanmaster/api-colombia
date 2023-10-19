@@ -1,9 +1,9 @@
-import caribe from '../../assets/region/caribe.webp'
-import pacifico from '../../assets/region/pacifica.webp'
-import orinoco from '../../assets/region/orinoquia.webp'
-import amazonas from '../../assets/region/amazonas.webp'
-import andina from '../../assets/region/andina.webp'
-import insular from '../../assets/region/insular.webp'
+import caribe from '../assets/region/caribe.webp'
+import pacifico from '../assets/region/pacifica.webp'
+import orinoco from '../assets/region/orinoquia.webp'
+import amazonas from '../assets/region/amazonas.webp'
+import andina from '../assets/region/andina.webp'
+import insular from '../assets/region/insular.webp'
 
 export const getInfo = async () => {
   const URL = `https://api-colombia.com/api/v1/Country/Colombia`
@@ -76,8 +76,6 @@ export const getPresident = async () => {
     politicalParty: pres.politicalParty,
     description: pres.description,
   }))
-
-  console.log(president)
 
   return president
 }

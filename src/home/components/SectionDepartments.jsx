@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { getInfoDepartments } from '../helpers/getInfo'
+import { getInfoDepartments } from '../../helpers/getInfo'
 
 import '../style.css'
 
@@ -30,12 +30,12 @@ export const SectionDepartments = () => {
         {infoDepartments.map((depar) => (
           <div key={depar.id} className=' text-white '>
             <div className=''>
-              <NavLink
+              <Link
                 to='/departamentos'
                 className='navLinkDep btn shadow-lg hover:shadow-lg hover:shadow-indigo-500/50'
               >
                 Dep. {depar.name}
-              </NavLink>
+              </Link>
             </div>
           </div>
         ))}

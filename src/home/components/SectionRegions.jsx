@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getInfoRegion } from '../helpers/getInfo'
-import { NavLink } from 'react-router-dom'
+import { getInfoRegion } from '../../helpers/getInfo'
+import { Link } from 'react-router-dom'
 
 export const SectionRegions = () => {
   const [infoRegion, setInfoRegion] = useState([])
@@ -48,12 +48,12 @@ export const SectionRegions = () => {
                 </p>
               </div>
               <div className='flex justify-end items-center mt-4'>
-                <NavLink
-                  to='/region'
+                <Link
+                  to={`/region/${region.name}`}
                   className='text-xl font-medium text-black hover:text-indigo-500'
                 >
                   Saber Más...
-                </NavLink>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { getPresident } from '../helpers/getInfo'
+import { getPresident } from '../../helpers/getInfo'
 
 export const SectionPresidents = () => {
   const [president, setPresident] = useState([])
@@ -28,7 +28,7 @@ export const SectionPresidents = () => {
           .reverse()
           .slice(0, 10)
           .map((pres) => (
-            <NavLink
+            <Link
               key={pres.id}
               className='card card-side bg-white shadow-xl w-64 h-28 transition-transform transform hover:scale-105'
             >
@@ -42,10 +42,10 @@ export const SectionPresidents = () => {
                 <p>{pres.startPeriodDate}</p>
                 <p>{pres.endPeriodDate}</p>
               </div>
-            </NavLink>
+            </Link>
           ))}
         <button className='btn border-none bg-white text-black hover:border-solid hover:bg-transparent hover:text-white'>
-          <NavLink to='/presidente'>Saber Más...</NavLink>
+          <Link to='/presidente'>Saber Más...</Link>
         </button>
       </div>
     </section>

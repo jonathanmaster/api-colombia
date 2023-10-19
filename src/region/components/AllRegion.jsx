@@ -1,39 +1,48 @@
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { getRegionById } from '../helpers/getRegionById'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { getInfoRegion } from '../../home/helpers/getInfo'
 
 export const AllRegion = () => {
   const navigate = useNavigate()
-  const [card, setCard] = useState([])
 
   const onNavigateBack = () => {
     navigate(-1)
   }
 
-  const getCardRegion = async () => {
-    const cardsRegion = await getInfoRegion()
-    setCard(cardsRegion)
-  }
+  const { id } = useParams()
+  const [region, setRegion] = useState(null)
 
   useEffect(() => {
-    getCardRegion()
-  }, [])
+    const fetchRegion = async () => {
+      const result = await getRegionById(id)
+      setRegion(result)
 
-  console.log(card)
+      // Si result es null o undefined, redirige al usuario a la página de inicio
+      if (!result) {
+        navigate('/home')
+      }
+    }
+
+    fetchRegion()
+  }, [id, navigate])
+
+  if (!region) {
+    return null
+  }
 
   return (
-    <div className='h-screen flex items-center'>
+    <div className='flex items-center sm:p-14 '>
       <div className='card lg:card-side bg-base-100 shadow-xl max-w-4xl mx-auto '>
-        <figure>
+        <figure className=''>
           <img
-            src='https://cgworld.jp/article/assets_c/2023/06/8d2be677b855404f464c027c52d1424993ac4ec5-thumb-1920x1080-39398.jpg'
-            alt='Album'
-            className='w-full h-full'
+            src={region.image}
+            alt={region.name}
+            className='w-full h-full lg:w-2000'
           />
         </figure>
         <div className='card-body bg-white'>
-          <h2 className='card-title'> Región {card.name}</h2>
-          <p>{card.description}</p>
+          <h2 className='card-title'> Región {region.name}</h2>
+          <p>{region.description}</p>
           <div className='card-actions justify-end'>
             <button onClick={onNavigateBack} className='btn btn-primary'>
               Volver
