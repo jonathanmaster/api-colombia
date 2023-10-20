@@ -55,6 +55,12 @@ export const getInfoDepartments = async () => {
   const department = data.map((depar) => ({
     id: depar.id,
     name: depar.name,
+    description: depar.description,
+    cityCapitalId: depar.cityCapitalId,
+    municipalities: depar.municipalities,
+    surface: depar.surface,
+    population: depar.population,
+    phonePrefix: depar.phonePrefix,
   }))
 
   return department

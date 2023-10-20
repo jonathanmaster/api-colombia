@@ -9,9 +9,9 @@ export const AppRouter = () => {
     <>
       <Routes>
         <Route path='home' element={<Home />} />
-        <Route path='presidente' element={<President />} />
-        <Route path='departamentos' element={<Departaments />} />
         <Route path='region/:id' element={<AllRegion />} />
+        <Route path='departamentos/:id' element={<Departaments />} />
+        <Route path='presidente' element={<President />} />
         {/* <Route path='native' element={<President />} />
         <Route path='area' element={<President />} />
         <Route path='especie' element={<President />} />
@@ -19,7 +19,7 @@ export const AppRouter = () => {
 
         {/*para que navegue directamente  */}
         <Route path='/' element={<Navigate to={'/home'} />} />
-        <Route path='/*' element={<Navigate to={'/home'} />} />
+        {/* <Route path='/*' element={<Navigate to={'/home'} />} /> */}
         <Route />
       </Routes>
     </>

@@ -31,7 +31,7 @@ export const SectionDepartments = () => {
           <div key={depar.id} className=' text-white '>
             <div className=''>
               <Link
-                to='/departamentos'
+                to={`/departamentos/${depar.name}`}
                 className='navLinkDep btn shadow-lg hover:shadow-lg hover:shadow-indigo-500/50'
               >
                 Dep. {depar.name}

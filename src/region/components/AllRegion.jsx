@@ -1,4 +1,4 @@
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getRegionById } from '../helpers/getRegionById'
 import { useEffect, useState } from 'react'
 
@@ -26,13 +26,11 @@ export const AllRegion = () => {
     fetchRegion()
   }, [id, navigate])
 
-  if (!region) {
-    return null
-  }
+  if (!region) return null
 
   return (
-    <div className='flex items-center sm:p-14 '>
-      <div className='card lg:card-side bg-base-100 shadow-xl max-w-4xl mx-auto '>
+    <div className='flex items-center justify-center h-screen sm:p-14 '>
+      <div className='card lg:card-side bg-base-100 shadow-xl max-w-4xl mx-auto my-auto'>
         <figure className=''>
           <img
             src={region.image}
@@ -44,8 +42,11 @@ export const AllRegion = () => {
           <h2 className='card-title'> Región {region.name}</h2>
           <p>{region.description}</p>
           <div className='card-actions justify-end'>
-            <button onClick={onNavigateBack} className='btn btn-primary'>
-              Volver
+            <button
+              onClick={onNavigateBack}
+              className='btn border-none bg-slate-100 text-black hover:border-solid hover:bg-transparent'
+            >
+              Atrás
             </button>
           </div>
         </div>
