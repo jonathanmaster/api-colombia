@@ -9,7 +9,7 @@ export const AppRouter = () => {
   return (
     <>
       <Routes>
-        <Route path='home' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='region/:id' element={<AllRegion />} />
         <Route path='departamentos/:id' element={<Departaments />} />
         <Route path='presidentes' element={<AllPresidents />} />
@@ -20,8 +20,8 @@ export const AppRouter = () => {
         <Route path='mapa' element={<President />} /> */}
 
         {/*para que navegue directamente  */}
-        <Route path='/' element={<Navigate to={'/home'} />} />
-        <Route path='/*' element={<Navigate to={'/home'} />} />
+        <Route path='/' element={<Navigate to={<Home />} />} />
+        <Route path='/*' element={<Navigate to={<Home />} />} />
         <Route />
       </Routes>
     </>

@@ -19,7 +19,7 @@ export const AllRegion = () => {
 
       // Si result es null o undefined, redirige al usuario a la página de inicio
       if (!result) {
-        navigate('/home')
+        navigate('/')
       }
     }
 

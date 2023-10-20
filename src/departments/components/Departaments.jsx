@@ -20,7 +20,7 @@ export const Departaments = () => {
 
       // Si result es null o undefined, redirige al usuario a la página de inicio
       if (!result) {
-        navigate('/home')
+        navigate('/')
       }
     }
 
