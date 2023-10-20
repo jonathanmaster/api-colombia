@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getPresident } from '../../helpers/getInfo'
 
-export const SectionPresidents = () => {
+export const AllPresidents = () => {
   const [president, setPresident] = useState([])
+  const navigate = useNavigate()
+
+  const onNavigateBack = () => {
+    navigate(-1)
+  }
 
   const infoPresident = async () => {
     const data = await getPresident()
@@ -26,7 +31,6 @@ export const SectionPresidents = () => {
         {president
           .slice()
           .reverse()
-          .slice(0, 10)
           .map((pres) => (
             <Link
               key={pres.id}
@@ -34,7 +38,7 @@ export const SectionPresidents = () => {
               to={`/presidente/${pres.name}`}
             >
               <figure>
-                <img className='w-full h-28' src={pres.image} alt='Movie' />
+                <img className='w-full h-28' src={pres.image} alt={pres.name} />
               </figure>
               <div className='p-4'>
                 <h2 className=''>
@@ -45,8 +49,11 @@ export const SectionPresidents = () => {
               </div>
             </Link>
           ))}
-        <button className='btn border-none bg-white text-black hover:border-solid hover:bg-transparent hover:text-white'>
-          <Link to='/presidentes'>Saber Más...</Link>
+        <button
+          onClick={onNavigateBack}
+          className='btn border-none bg-white text-black hover:border-solid hover:bg-transparent hover:text-white'
+        >
+          Atrás
         </button>
       </div>
     </section>

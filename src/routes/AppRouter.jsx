@@ -1,8 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Home } from '../home/Home'
-import { President } from '../presidents/components/President'
 import { Departaments } from '../departments/components/Departaments'
 import { AllRegion } from '../region/components/AllRegion'
+import { AllPresidents } from '../presidents/components/AllPresident'
+import { President } from '../presidents/components/President'
 
 export const AppRouter = () => {
   return (
@@ -11,7 +12,8 @@ export const AppRouter = () => {
         <Route path='home' element={<Home />} />
         <Route path='region/:id' element={<AllRegion />} />
         <Route path='departamentos/:id' element={<Departaments />} />
-        <Route path='presidente' element={<President />} />
+        <Route path='presidentes' element={<AllPresidents />} />
+        <Route path='presidente/:id' element={<President />} />
         {/* <Route path='native' element={<President />} />
         <Route path='area' element={<President />} />
         <Route path='especie' element={<President />} />
@@ -19,7 +21,7 @@ export const AppRouter = () => {
 
         {/*para que navegue directamente  */}
         <Route path='/' element={<Navigate to={'/home'} />} />
-        {/* <Route path='/*' element={<Navigate to={'/home'} />} /> */}
+        <Route path='/*' element={<Navigate to={'/home'} />} />
         <Route />
       </Routes>
     </>
