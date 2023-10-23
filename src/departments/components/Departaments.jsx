@@ -31,7 +31,9 @@ export const Departaments = () => {
 
   return (
     <section className='text-white p-6'>
-      <h1 className='text-6xl text-center my-6'>{departments.name}</h1>
+      <h1 className='text-5xl sm:text-6xl text-center my-6'>
+        {departments.name}
+      </h1>
 
       <div className='flex flex-col sm:flex-row lg:max-w-5xl lg:items-center lg:mx-auto'>
         <div>

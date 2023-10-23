@@ -28,7 +28,7 @@ export const President = () => {
   if (!president) return null
 
   return (
-    <section className='max-w-2xl py-4 px-2 mx-2 my-auto text-center bg-white shadow-sm rounded-sm sm:mx-auto '>
+    <section className='max-w-2xl py-4 px-2 mx-2 mt-20 text-center bg-white shadow-sm rounded-sm sm:mx-auto '>
       <div className='flex justify-center  -mt-16 text-white font-bold'>
         <p>{president.startPeriodDate}</p>
         <img
